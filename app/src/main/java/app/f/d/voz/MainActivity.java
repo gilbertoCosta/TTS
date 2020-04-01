@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     String phoneNumber = "981981810";
     String message = "Texto padrão para envio do SMS.";
 
-
     private TextToSpeech tts;
 
     @Override
@@ -136,9 +135,6 @@ public class MainActivity extends AppCompatActivity {
             openURL();
         }
 
-        if(speech.toUpperCase().contains("ABRIR CÂMERA")){
-            openCamera();
-        }
     }
 
     private void openURL() {
@@ -157,13 +153,5 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("vnd.android-dir/mms-sms");
         startActivity(intent);
     }
-
-    private void openCamera() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, 1);
-        }
-    }
-
 
 }
